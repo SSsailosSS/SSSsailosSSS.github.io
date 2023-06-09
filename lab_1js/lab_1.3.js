@@ -1,21 +1,31 @@
 'use strict';
-function checkNumber() {
+function number() {
+  let number;
+
   let num;
   do {
-    num = prompt("Введите число больше 100:");
-  } while (num !== null && (isNaN(num) || +num <= 100));
+      num = prompt('Введите число большее 100');
+      if (num === null) return; // выход из функции, если нажали "Отмена"
+      if (num === '') continue; // продолжаем цикл, если введена пустая строка
+  } while (num <= 100 ||  isNaN(num));
+  return ('Вы ввели ', num, '> 100');
 }
 
-function checkPrime() {
-  const n = prompt("Введите число:");
+function simple() {
+  let n = prompt("Введите число:");
 
-  nextPrime:
   for (let i = 2; i <= n; i++) {
+    let isPrime = true;
 
     for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
     }
 
-    console.log(i);
+    if (isPrime) {
+      console.log(i);
+    }
   }
 }
