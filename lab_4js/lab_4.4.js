@@ -10,7 +10,7 @@ obj.addClass = function addClass(cls) {
     this.className = arr.join(" ");
 }
 
-obj.addClass('kuki'); 
+obj.addClass('sergo'); 
 obj.addClass('open'); 
 
 console.log(obj.className);
@@ -26,7 +26,7 @@ obj.removeClass = function removeClass(cls) {
     obj.className = arr.join(' ');
 }
 
-obj.removeClass('kuki'); 
-obj.removeClass('kukii');
+obj.removeClass('sergo'); 
+obj.removeClass('sergoo');
 
 console.log(obj.className);
