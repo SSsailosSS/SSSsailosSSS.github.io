@@ -1,14 +1,21 @@
 'use strict';
-let number;
+function checkNumber() {
+  let num;
+  do {
+    num = prompt("Введите число больше 100:");
+  } while (num !== null && (isNaN(num) || +num <= 100));
+}
 
-    do {
-      number = prompt("Введите число больше 100:", "");
-    } while (number <= 100 && number != null);
+function checkPrime() {
+  const n = prompt("Введите число:");
 
-    if (Number(number) != number) {
-      alert("Вы ввели не число");
-    } else if (number !== null) {
-      alert("Спасибо, вы ввели число больше 100: " + number);
-    } else {
-      alert("Вы отменили ввод.");
+  nextPrime:
+  for (let i = 2; i <= n; i++) {
+
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
     }
+
+    console.log(i);
+  }
+}
