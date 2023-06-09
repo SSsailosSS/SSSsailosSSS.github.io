@@ -1,32 +1,26 @@
-let obj = {
-    className: 'open menu'
-}
+ "use strict";
+        let obj = {
+            className: 'open menu',
 
-obj.addClass = function addClass(cls) {
-    let arr = this.className.split(" ");
-    if (!arr.includes(cls)) {
-        arr.push(cls)
-    }
-    this.className = arr.join(" ");
-}
+            addClass(cls) {
+                let classes = this.className.split(' ');
+                if (!classes.includes(cls)) {
+                    classes.push(cls);
+                    this.className = classes.join(' ');
+                }
+                return this;
+            },
 
-obj.addClass('sergo'); 
-obj.addClass('open'); 
-
-console.log(obj.className);
-
-obj.removeClass = function removeClass(cls) {
-    let arr = this.className.split(" ");
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == cls) {
-            arr.splice(i, 1);
-            i--;
-        }
-    }
-    obj.className = arr.join(' ');
-}
-
-obj.removeClass('sergo'); 
-obj.removeClass('sergoo');
-
-console.log(obj.className);
+            removeClass(cls) {
+                let classes = this.className.split(' ');
+                let index = classes.indexOf(cls);
+                if (index !== -1) {
+                    classes.splice(index, 1);
+                    this.className = classes.join(' ');
+                }
+                return this;
+            }
+        };
+        console.log(obj.addClass('new'));
+        console.log(obj.removeClass('open'));
+        console.log(obj.removeClass('menu'));
