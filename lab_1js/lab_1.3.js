@@ -1,7 +1,14 @@
 'use strict';
+let number;
 
-let num;
+    do {
+      number = prompt("Введите число больше 100:", "");
+    } while (number <= 100 && number != null);
 
-do {
-  num = prompt("Введите число больше 100");
-} while (num !== null && (isNaN(num) || +num <= 100));
+    if (Number(number) != number) {
+      alert("Вы ввели не число");
+    } else if (number !== null) {
+      alert("Спасибо, вы ввели число больше 100: " + number);
+    } else {
+      alert("Вы отменили ввод.");
+    }
