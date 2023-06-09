@@ -1,42 +1,39 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>Задание 3</title>
+<html><head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>div</title>
 </head>
 
 <body>
-  
-  <textarea id="area" autofocus></textarea>
-  <div id="view" class="view">ПИШИ</div>
+	<textarea id="area" autofocus="" hidden="">Ctrl+E</textarea>
+	<div id="divv">div</div>
 
-  <script>
+	<script>
+		"use strict";
+		area.hidden = true;
 
-    area.hidden = true;
+		document.onkeydown = function (e) {
+			if (e.ctrlKey && e.keyCode == '69') {
+				divv.hidden = true;
+				area.hidden = false;
+				area.focus()
+				area.innerHTML = divv.innerHTML;
+				return false;
+			}
 
-    document.onkeydown = function (a) {
-      if (a.ctrlKey && a.keyCode == '69') {
-        view.hidden = true;
-        area.hidden = false;
-        area.focus()
-        area.innerHTML = view.innerHTML;
-        return false;
-      }
+			if (e.ctrlKey && e.keyCode == '83') {
+				divv.hidden = false;
+				area.hidden = true;
+				divv.innerHTML = area.value;
+				return false;
+			} else if (e.keyCode == '27') {
+				divv.hidden = false;
+				area.hidden = true;
+			}
+		};
 
-      if (a.ctrlKey && a.keyCode == '83') {
-        view.hidden = false;
-        area.hidden = true;
-        view.innerHTML = area.value;
-        return false;
-      } else if (a.keyCode == '27') {
-        view.hidden = false;
-        area.hidden = true;
-      }
-    };
+	</script>
 
-  </script>
 
-</body>
-
-</html>
+</body></html>
